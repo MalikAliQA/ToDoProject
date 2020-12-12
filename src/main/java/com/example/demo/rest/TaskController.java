@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,6 +20,7 @@ import com.example.demo.persistance.domain.Task;
 import com.example.demo.service.TaskService;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/task")
 public class TaskController {
 
@@ -30,10 +32,10 @@ public class TaskController {
 		this.service = service;
 	}
 
-	@GetMapping("hello") // this is the mapping i want - get me something
-	public String hello() {
-		return "hello from car";
-	}
+//	@GetMapping("hello") // this is the mapping i want - get me something
+//	public String hello() {
+//		return "hello from car";
+//	}
 
 	// create method
 	@PostMapping("/create")

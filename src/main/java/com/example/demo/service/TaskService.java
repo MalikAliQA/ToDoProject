@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dto.TaskDto;
@@ -27,6 +28,13 @@ public class TaskService {
 	// create mapToDto
 	private TaskDto mapToDTO(Task task) {
 		return this.mapper.map(task, TaskDto.class);
+	}
+
+	@Autowired
+	public TaskService(TaskRepo repo, ModelMapper mapper) {
+		super();
+		this.repo = repo;
+		this.mapper = mapper;
 	}
 
 	// Create

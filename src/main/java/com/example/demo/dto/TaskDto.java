@@ -11,4 +11,9 @@ public class TaskDto {
 	private String name;
 	private String body;
 
+//	public TaskDto() {
+//		super();
+//		// TODO Auto-generated constructor stub
+//	}
+
 }
