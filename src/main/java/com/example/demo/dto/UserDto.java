@@ -15,4 +15,9 @@ public class UserDto {
 
 	private List<TaskDto> tasks = new ArrayList<>();
 
+	@Override
+	public String toString() {
+		return "UserDto [id=" + id + ", name=" + name + ", tasks=" + tasks + "]";
+	}
+
 }

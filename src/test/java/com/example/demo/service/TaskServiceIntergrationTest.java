@@ -11,12 +11,16 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.jdbc.Sql;
+import org.springframework.test.context.jdbc.Sql.ExecutionPhase;
 
 import com.example.demo.dto.TaskDto;
 import com.example.demo.persistance.domain.Task;
 import com.example.demo.persistance.repo.TaskRepo;
 
 @SpringBootTest
+@Sql(scripts = { "classpath:schema-test.sql",
+		"classpath:data-test.sql" }, executionPhase = ExecutionPhase.BEFORE_TEST_METHOD)
 @ActiveProfiles(profiles = "testdb")
 public class TaskServiceIntergrationTest {
 
@@ -70,9 +74,9 @@ public class TaskServiceIntergrationTest {
 
 	@Test
 	void updateTest() throws Exception {
-		Task TEST_TASK_5 = new Task(5L, "shopping List", "oranges");
-		assertThat(this.service.update(this.mapToDTO(TEST_TASK_5), TEST_TASK_5.getId()))
-				.isEqualTo(this.mapToDTO(TEST_TASK_5));
+		Task TEST_TASK_1 = new Task(1L, "shopping List", "oranges");
+		assertThat(this.service.update(this.mapToDTO(TEST_TASK_1), TEST_TASK_1.getId()))
+				.isEqualTo(this.mapToDTO(TEST_TASK_1));
 
 	}
 

@@ -1,5 +1,7 @@
 package com.example.demo.domain;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.Test;
 
 import com.example.demo.persistance.domain.User;
@@ -27,9 +29,10 @@ public class UserUnitTest {
 		User handle;
 
 		handle = new User();
-		handle.equals(handle);
-
-		handle.toString();
+		// handle.equals(handle);
+		String expected = "User [id=" + null + ", name=" + null + ", tasks=" + null + "]";
+		// handle.toString();
+		assertEquals(expected, handle.toString());
 
 	}
 

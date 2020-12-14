@@ -43,4 +43,17 @@ public class Task {
 		this.body = body;
 	}
 
+	public Task(Long id, String name, String body, User user) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.body = body;
+		this.user = user;
+	}
+
+	@Override
+	public String toString() {
+		return "Task [id=" + id + ", name=" + name + ", body=" + body + ", user=" + user + "]";
+	}
+
 }
