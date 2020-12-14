@@ -1,5 +1,7 @@
 package com.example.demo.dto;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.Test;
 
 //import org.springframework.boot.test.context.SpringBootTest;
@@ -10,6 +12,7 @@ public class TaskDtoUnitTest {
 	@Test
 	void argsconsturctTest() {
 		new TaskDto().equals(new TaskDto());
+
 	}
 
 	@Test
@@ -28,9 +31,10 @@ public class TaskDtoUnitTest {
 		TaskDto handle;
 
 		handle = new TaskDto();
-		handle.equals(handle);
-
-		handle.toString();
+		// handle.equals(handle);
+		String expected = "TaskDto [id=" + null + ", name=" + null + ", body=" + null + "]";
+		// handle.toString();
+		assertEquals(expected, handle.toString());
 
 	}
 
