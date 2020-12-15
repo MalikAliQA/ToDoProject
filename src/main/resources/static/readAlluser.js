@@ -9,13 +9,54 @@ fetch('http://localhost:9092/user/read/')
 
       // Examine the text in the response
       response.json().then(function(commentData) {
+        //console.log("first: " + commentData)
        
 
         let table = document.querySelector("table");
         let data = Object.keys(commentData[0]); // first record in the array pos 0
+        console.log(data)
+        console.log (commentData)
+        console.log (commentData[0])
+        console.log(commentData[0].tasks)
+        console.log(commentData[0].tasks[0])
+        console.log(commentData[0].tasks[0].body)
+        console.log("id of specific tasks: " + commentData[0].tasks[0].id)
+        console.log("test " + data)
+        //console.log("fulldataintasks1: " + commentData[0].tasks[0])
+        Object.keys(data).forEach(function(prop) {
+          console.log(data[prop])
+          
+        });
+        Object.keys(commentData).forEach(function(prop) {
+          console.log(commentData[prop])
+          
+        });
+        Object.keys(commentData[0]).forEach(function(prop) {
+          console.log(commentData[0][prop])
+          
+        });
+        Object.keys(commentData[0].tasks).forEach(function(prop) {//this one!!!!
+          console.log(commentData[0].tasks[prop])
+          
+        });
+        Object.keys(commentData[0].tasks[0]).forEach(function(prop) {
+          console.log(commentData[0].tasks[0][prop])
+          //Object.keys(data[prop]).forEach(function(newprop) {
+            //console.log("third: " + data[prop][newprop])
+
+          //});
+        });
+
+        for(let i = 0, l = commentData[0].tasks.length; i < l; i++) {
+           var obj = commentData[0].tasks[i];
+           //console.log("each head: " +obj)
+           console.log("each head: " +obj.id)
+           console.log("each head: " +obj.name)
+           console.log("each head: " +obj.body)
+      }
         
         createTableHead(table,data);
-        createTableBody(table,commentData);
+        createTableBody(table,commentData);//orgianl commentData
         
       });
     }
@@ -28,11 +69,12 @@ fetch('http://localhost:9092/user/read/')
     let tableHead= table.createTHead();
     let row = tableHead.insertRow();
     for(let keys of data){
-        // console.log("data",data)
+        console
+        console.log("data: " , data)
         let th = document.createElement("th");
         let text = document.createTextNode(keys);
         th.appendChild(text);
-        row.appendChild(th)
+        row.appendChild(th)  
       }
     }
     let th2 = document.createElement("th")
@@ -50,6 +92,8 @@ function createTableBody(table,commentData){
         for(let values in commentRecord){
             let cell = row.insertCell();
             let text = document.createTextNode(commentRecord[values]);
+            console.log("values: " + commentRecord[values]);
+            //console.log("tasks :" + commentRecord[values].tasks[0].body);
             cell.appendChild(text);
           }
           let newCell = row.insertCell();

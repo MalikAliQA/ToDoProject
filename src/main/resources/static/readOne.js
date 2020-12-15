@@ -52,7 +52,7 @@ function getData(id){
         "body": body,
         "name": name,
         "user": {
-          "id": 2
+          "id": userid
         }
 
 

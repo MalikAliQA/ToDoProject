@@ -14,7 +14,7 @@ document
         "body": body,
         "name": name,
         "user": {
-          "id": 2
+          "id": userid
         }
 
 
