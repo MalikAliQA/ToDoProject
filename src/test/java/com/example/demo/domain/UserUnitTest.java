@@ -3,9 +3,13 @@ package com.example.demo.domain;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 
 import com.example.demo.persistance.domain.User;
 
+@SpringBootTest
+@ActiveProfiles(profiles = "testdb")
 public class UserUnitTest {
 
 	@Test
@@ -18,9 +22,7 @@ public class UserUnitTest {
 		User handle;
 
 		handle = new User();
-		handle.equals(handle);
-
-		handle.hashCode();
+		assertEquals(357642, handle.hashCode());
 
 	}
 
@@ -29,9 +31,9 @@ public class UserUnitTest {
 		User handle;
 
 		handle = new User();
-		// handle.equals(handle);
+
 		String expected = "User [id=" + null + ", name=" + null + ", tasks=" + null + "]";
-		// handle.toString();
+
 		assertEquals(expected, handle.toString());
 
 	}

@@ -32,39 +32,28 @@ public class TaskController {
 		this.service = service;
 	}
 
-//	@GetMapping("hello") // this is the mapping i want - get me something
-//	public String hello() {
-//		return "hello from car";
-//	}
-
-	// create method
 	@PostMapping("/create")
 	public ResponseEntity<TaskDto> create(@RequestBody Task task) {
 		TaskDto created = this.service.create(task);
 		return new ResponseEntity<>(created, HttpStatus.CREATED);
-		// http status code 201 (created)
 
 	}
 
-	// read all
 	@GetMapping("/read")
 	public ResponseEntity<List<TaskDto>> read() {
 		return ResponseEntity.ok(this.service.readAll());
 	}
 
-	// read one
 	@GetMapping("/read/{id}")
 	public ResponseEntity<TaskDto> readOne(@PathVariable Long id) {
 		return ResponseEntity.ok(this.service.readOne(id));
 	}
 
-	// update
 	@PutMapping("/update/{id}")
 	public ResponseEntity<TaskDto> update(@PathVariable Long id, @RequestBody TaskDto taskDto) {
 		return new ResponseEntity<>(this.service.update(taskDto, id), HttpStatus.ACCEPTED);
 	}
 
-	// delete one method
 	@DeleteMapping("/delete/{id}")
 	public ResponseEntity<TaskDto> delete(@PathVariable Long id) {
 		return this.service.delete(id) ? new ResponseEntity<>(HttpStatus.NO_CONTENT)
