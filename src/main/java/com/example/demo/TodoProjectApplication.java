@@ -10,10 +10,6 @@ public class TodoProjectApplication {
 	public static void main(String[] args) {
 		ApplicationContext beanBag = SpringApplication.run(TodoProjectApplication.class, args);
 
-//		System.out.println(beanBag.getBean("time", String.class));// creates singleton object reused over agan
-//		System.out.println(beanBag.getBean("time", String.class));
-//		System.out.println(beanBag.getBean("time", String.class));
-//		System.out.println(beanBag.getBean("time", String.class));
 	}
 
 }

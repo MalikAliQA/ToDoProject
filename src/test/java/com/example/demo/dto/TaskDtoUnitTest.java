@@ -20,9 +20,9 @@ public class TaskDtoUnitTest {
 		TaskDto handle;
 
 		handle = new TaskDto();
-		handle.equals(handle);
 
-		handle.hashCode();
+		System.out.println(handle.hashCode());
+		assertEquals(357642, handle.hashCode());
 
 	}
 
@@ -31,9 +31,9 @@ public class TaskDtoUnitTest {
 		TaskDto handle;
 
 		handle = new TaskDto();
-		// handle.equals(handle);
+
 		String expected = "TaskDto [id=" + null + ", name=" + null + ", body=" + null + "]";
-		// handle.toString();
+
 		assertEquals(expected, handle.toString());
 
 	}
