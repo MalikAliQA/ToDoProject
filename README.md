@@ -1,4 +1,4 @@
-Coverage: 875%
+Coverage: 87.5%
 # ToDoProject
 
 A TODO web application that allows people to add users and tasks and link tasks to users with full CRUD functionality for both users and tasks
