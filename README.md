@@ -91,7 +91,7 @@ the last line checks if the data we sent to the request is the same as the data 
 
 ### Front End Tests
 
-Front end testing is done in Eclipse with Selenium where we automate the navigation and input process that a user would do on the front end, This is in the linked repo called ToDoSeleniumTesting, The testing is in reference with The POM Design patter, so each page has its own class in the pages folder and the testing in a seperate folder below is the code for the create a task page 
+Front end testing is done in Eclipse with Selenium where we automate the navigation and input process that a user would do on the front end, This is in the linked repo called ToDoSeleniumTesting, The testing is in reference with The POM Design patter, so each page has its own class in the pages folder and the testing in a seperate folder below is the code for the create a task page. See the ToDoSeleniumTesting ReadMe for a full break down of one of the tests
 
 ```
 @Test
