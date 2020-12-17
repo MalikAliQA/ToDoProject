@@ -13,8 +13,9 @@ import com.example.demo.persistance.domain.Task;
 public class TaskUnitTest {
 
 	@Test
-	void argsconsturctTest() {
+	void argsconsturctequalsTest() {
 		new Task().equals(new Task());
+		assertEquals(true, (new Task().equals(new Task())));
 	}
 
 	@Test

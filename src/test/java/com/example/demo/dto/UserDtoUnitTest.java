@@ -9,8 +9,9 @@ import org.junit.jupiter.api.Test;
 public class UserDtoUnitTest {
 
 	@Test
-	void argsconsturctTest() {
+	void argsconsturctequalsTest() {
 		new UserDto().equals(new UserDto());
+		assertEquals(true, (new UserDto().equals(new UserDto())));
 	}
 
 	@Test

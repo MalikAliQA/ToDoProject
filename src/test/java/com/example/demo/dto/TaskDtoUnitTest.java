@@ -10,8 +10,9 @@ import org.junit.jupiter.api.Test;
 public class TaskDtoUnitTest {
 
 	@Test
-	void argsconsturctTest() {
+	void argsconsturctequalsTest() {
 		new TaskDto().equals(new TaskDto());
+		assertEquals(true, (new TaskDto().equals(new TaskDto())));
 
 	}
 

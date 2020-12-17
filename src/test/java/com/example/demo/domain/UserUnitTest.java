@@ -13,8 +13,9 @@ import com.example.demo.persistance.domain.User;
 public class UserUnitTest {
 
 	@Test
-	void argsconsturctTest() {
+	void argsconsturctequalsTest() {
 		new User().equals(new User());
+		assertEquals(true, (new User().equals(new User())));
 	}
 
 	@Test
