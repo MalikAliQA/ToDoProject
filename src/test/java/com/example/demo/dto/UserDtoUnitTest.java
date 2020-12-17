@@ -9,8 +9,9 @@ import org.junit.jupiter.api.Test;
 public class UserDtoUnitTest {
 
 	@Test
-	void argsconsturctTest() {
+	void argsconsturctequalsTest() {
 		new UserDto().equals(new UserDto());
+		assertEquals(true, (new UserDto().equals(new UserDto())));
 	}
 
 	@Test
@@ -18,9 +19,9 @@ public class UserDtoUnitTest {
 		UserDto handle;
 
 		handle = new UserDto();
-		handle.equals(handle);
 
-		handle.hashCode();
+		System.out.println(handle.hashCode());
+		assertEquals(357600, handle.hashCode());
 
 	}
 
@@ -29,9 +30,9 @@ public class UserDtoUnitTest {
 		UserDto handle;
 
 		handle = new UserDto();
-		// handle.equals(handle);
+
 		String expected = "UserDto [id=" + null + ", name=" + null + ", tasks=" + new ArrayList<>() + "]";
-		// handle.toString();
+
 		assertEquals(expected, handle.toString());
 
 	}

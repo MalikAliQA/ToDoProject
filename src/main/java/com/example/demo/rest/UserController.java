@@ -32,11 +32,6 @@ public class UserController {
 		this.service = service;
 	}
 
-//	@GetMapping("hello")
-//	public String hello() {
-//		return "Hello from garage";
-//	}
-
 	@PostMapping("/create")
 	public ResponseEntity<UserDto> create(@RequestBody User user) {
 		UserDto created = this.service.create(user);
